@@ -1,5 +1,7 @@
 import requests 
+import random
 
+# get pockemon data dictionary
 def getPockemon(id):
 
     url = f'https://pokeapi.co/api/v2/pokemon/{id}/'
@@ -13,3 +15,6 @@ def getPockemon(id):
         'weight': pockemon['weight']
     }
 
+# get random ID number
+def chosePockemon():
+    return random.randint(1, 151)
