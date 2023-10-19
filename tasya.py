@@ -18,3 +18,8 @@ def getPockemon(id):
 # get random ID number
 def chosePockemon():
     return random.randint(1, 151)
+
+def showResults(list, param, res1, res2):
+    print(f'Your opponent pockemons:{list}')
+    print(f'Your {param} is: {res1}')
+    print(f'Your opponent {param} is: {res2}')
