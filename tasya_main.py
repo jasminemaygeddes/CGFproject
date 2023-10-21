@@ -6,10 +6,12 @@ from tasya import getPockemon, chosePockemon, showResults
 answer = 'y'
 userScore = 0
 computerScore = 0
+greetingMsg = "Welcome to the Pockemon game! Let's play?(y/n): "
 
 while answer == 'y':
-    userAnswer = input('Do you want to play?(y/n): ')
+    userAnswer = input(greetingMsg)
     answer = userAnswer
+    greetingMsg = 'Do you want to play again?(y/n): '
 
     if userAnswer == 'y':
         
@@ -48,7 +50,7 @@ while answer == 'y':
                 print(f'You lose. The score is: {userScore}/{computerScore}')
             else:
                 print(f'Equal! The score is: {userScore}/{computerScore}')
-                
+
     else:
-        print('Goodbye!')
+        print(f'The final score is: {userScore}/{computerScore}\nGoodbye!')
 
