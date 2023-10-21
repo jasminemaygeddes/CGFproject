@@ -23,3 +23,9 @@ def showResults(list, param, res1, res2):
     print(f'Your opponent pockemons:{list}')
     print(f'Your {param} is: {res1}')
     print(f'Your opponent {param} is: {res2}')
+
+def showPockemon(dict):
+    print(f"Name: {dict['name']}")
+    print(f"Id: {dict['id']}")
+    print(f"Weight: {dict['weight']}")
+    print(f"Height: {dict['height']}")

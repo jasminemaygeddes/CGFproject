@@ -1,5 +1,5 @@
 # import functions
-from tasya import getPockemon, chosePockemon, showResults
+from tasya import getPockemon, chosePockemon, showResults, showPockemon
 
 # start the game
 # ask user to play
@@ -20,19 +20,24 @@ while answer == 'y':
 
         cardsNumber = int(input('How many cards do you want?: '))
 
-        for i in range(cardsNumber):
-            userPockemonList.append(getPockemon(chosePockemon()))
-            computerPockemonList.append(getPockemon(chosePockemon()))
-        
-            # show user's pockemons 
-            print(f'Your pockemons:{userPockemonList}')
-
         if cardsNumber > 1:
+            # show user's pockemons
+            print('\nYour pockemons:')
+            
+            for i in range(cardsNumber):
+                userPockemonList.append(getPockemon(chosePockemon()))
 
+                print(f'\nPockemon number {i + 1}:\n')
+                showPockemon(userPockemonList[i])
+
+                computerPockemonList.append(getPockemon(chosePockemon()))
+
+            print('\n')
+            userCardChoise = input('Chose the pockemon number: ')    
             userParamChoise = input('Choose parameter:(id, height, weight) ')
-            userCardChoise = input('Chose the pockemon: ')
 
         else:
+            print(f'Your pockemon: {showPockemon(userPockemonList[0])}')
             userParamChoise = input('Choose parameter:(id, height, weight) ')
 
             # compare parameters
