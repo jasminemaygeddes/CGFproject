@@ -61,6 +61,8 @@ def checkPockemonNumber(num, totalNum):
     if num > totalNum or num < 1:
         print(f'Wrong number! You have only {totalNum} pockemons')
         return False
+    else:
+        return True
 
 #check the input of chosen parameter
 def checkParameter(input):
