@@ -46,3 +46,12 @@ def computerPockemon(list, param):
 # getting chosen pockemon from the user's pockemon list
 def findUserPockemon(list, number):
     return list[number]
+
+# getting full key name for pockemon's dictionary
+def defineParameter(data):
+    if data == 'h':
+        return 'height'
+    elif data == 'w':
+        return 'weight'
+    else:
+        return data
