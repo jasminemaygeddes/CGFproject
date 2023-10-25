@@ -55,3 +55,17 @@ def defineParameter(data):
         return 'weight'
     else:
         return data
+    
+# check chosen pockemon card if it's in playing cards range
+def checkPockemonNumber(num, totalNum):
+    if num > totalNum or num < 1:
+        print(f'Wrong number! You have only {totalNum} pockemons')
+        return False
+
+#check the input of chosen parameter
+def checkParameter(input):
+    if input == 'id' or input == 'w' or input == 'h':
+        return True
+    else: 
+        print('Wrong parameter!')
+        return False 
