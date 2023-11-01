@@ -1,8 +1,8 @@
 #functions imported on two lines purely so we don't need to scroll to see them all, would absolutely work on a single line. 
 #If it doesn't, i think you might need to replace the squirrels.
 
-from Project_functions import getStarwars, Choose_Card, showCards, showResults2, findUserCharacter, computerCards
-from Project_functions import checkParameter, defineParameter, checkCardNumber
+from game_functions import getStarwars, Choose_Card, showCards, show_results, findUserPockemon, computerPockemon
+from game_functions import checkParameter, defineParameter, checkPockemonNumber
 
 userScore = 0
 computerScore = 0
@@ -38,7 +38,8 @@ while answer == 'y':
                 computerCardList.append(getStarwars(Choose_Card())) 
 
             print()
- # get parameters from user
+
+            # get parameters from userCards
             paramStatus = False
 
             # check the user's input 
@@ -53,11 +54,11 @@ while answer == 'y':
             status = False 
             while status == False:
                 userCardChoice = int(input('Choose the card number: '))
-                status = checkCardNumber(userCardChoice, cardNumber)
+                status = checkPockemonNumber(userCardChoice, cardNumber)
            
             # getting 1 chosen card from user and with max value computer card
-            computerCard = computerCards(computerCardList, userParamChoice)
-            userCard = findUserCharacter(userCardList, userCardChoice - 1)
+            computerCard = computerPockemon(computerCardList, userParamChoice)
+            userCard = findUserPockemon(userCardList, userCardChoice - 1)
             print() 
 
             print(f'You choose: {userCard["name"].upper()}!')
@@ -74,18 +75,27 @@ while answer == 'y':
             userResult = userCard[userParamChoice]
             compResult = computerCard[userParamChoice]
 
+            if userResult == 'unknown':
+                userResult = 0
+            
+            if compResult == 'unknown':
+                compResult = 0
+            
+            userResult = int(userResult)
+            compResult = int(compResult)
+
             # compare results and getting score
             if userResult > compResult:
                 userScore += 1
-                showResults2(computerCard, userParamChoice, userResult, compResult)
+                show_results(computerCard, userParamChoice, userResult, compResult)
                 print(f'You won! The score is: {userScore}/{computerScore}')
 
             elif userResult < compResult:
                 computerScore += 1
-                showResults2(computerCard, userParamChoice, userResult, compResult)
+                show_results(computerCard, userParamChoice, userResult, compResult)
                 print(f'You lose. The score is: {userScore}/{computerScore}')
             else:
-                showResults2(computerCard, userParamChoice, userResult, compResult)
+                show_results(computerCard, userParamChoice, userResult, compResult)
                 print(f'Equal! The score is: {userScore}/{computerScore}')
 
         elif cardNumber == 1:
@@ -113,15 +123,25 @@ while answer == 'y':
             userResult = userCards[userParamChoice]
             compResult = compCards[userParamChoice]
 
+            if userResult == 'unknown':
+                userResult = 0
+
+            if compResult == 'unknown':
+                compResult = 0
+            
+            userResult = int(userResult)
+            compResult = int(compResult)
+
             # compare results
+
             if userResult > compResult:
                 userScore += 1
-                showResults2(compCards, userParamChoice, userResult, compResult)
+                show_results(compCards, userParamChoice, userResult, compResult)
                 print(f'You won! The score is: {userScore}/{computerScore}')
 
             elif userResult < compResult:
                 computerScore += 1
-                showResults2(compCards, userParamChoice, userResult, compResult)
+                show_results(compCards, userParamChoice, userResult, compResult)
                 print(f'You lose. The score is: {userScore}/{computerScore}')
             else:
                 print(f'Draw! The score is: {userScore}/{computerScore}')

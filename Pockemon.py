@@ -1,7 +1,7 @@
 # import functions from tasya.py file
-from tasya import getPockemon, chosePockemon, showResults, showPockemon
-from tasya import findUserPockemon, computerPockemon, defineParameter
-from tasya import checkParameter, checkPockemonNumber
+from game_functions import getPockemon, chosePockemon, showResults, showPockemon
+from game_functions import findUserPockemon, computerPockemon, defineParameter
+from game_functions import checkParameter, checkPockemonNumber
 
 # start the game
 # ask user to play
