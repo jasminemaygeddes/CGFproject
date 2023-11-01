@@ -26,11 +26,11 @@ def showCards(dict):
     print(f"Height: {dict['height']}")
 
 def showResults2(list, param, res1, res2):
-    print('Your opponent pockemon:')
+    print("Your opponent's characters")
     showCards(list)
     print()
     print(f'Your {param} is: {res1}')
-    print(f'Your opponent {param} is: {res2}')
+    print(f"Your opponent's {param} is: {res2}")
 
 # getting pockemon from the computer list with max param value
 def computerCards(list, param):
